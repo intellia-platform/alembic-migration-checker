@@ -7,7 +7,7 @@ RUN pip install psycopg2-binary
 
 # Install mysqlclient and its debian package dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libmariadb-dev-compat gcc                   `: MySQL client` \
+    libmariadb-dev-compat gcc pkg-config `: MySQL client` \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install mysqlclient
 
