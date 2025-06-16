@@ -1,4 +1,4 @@
-FROM python:3.13-alpine
+FROM python:3.12-slim
 
 # Install dependencies
 RUN pip install sqlalchemy
@@ -8,7 +8,7 @@ RUN pip install psycopg2-binary
 # Install mysqlclient and its debian package dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libmariadb-dev-compat gcc                   `: MySQL client` \
-    && rm -rf /var/lib/apt/lists/*\
+    && rm -rf /var/lib/apt/lists/*
 RUN pip install mysqlclient
 
 # Copy files from the action folder to the root in the Docker image
