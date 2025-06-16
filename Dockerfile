@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12-debian
 
 # Install dependencies
 RUN pip install sqlalchemy
@@ -7,7 +7,7 @@ RUN pip install psycopg2-binary
 
 # Install mysqlclient and its debian package dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libmariadb-dev-compat gcc pkg-config `: MySQL client` \
+    libmariadb-dev-compat gcc `: MySQL client` \
     && rm -rf /var/lib/apt/lists/*
 RUN pip install mysqlclient
 
