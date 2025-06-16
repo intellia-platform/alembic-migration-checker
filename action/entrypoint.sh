@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-python ./check_alembic_migration.py \
+python /check_alembic_migration.py \
     --db_url="${INPUT_DB_URL}" \
     --db_type="${INPUT_DB_TYPE}" \
     --db_host="${INPUT_DB_HOST}" \
